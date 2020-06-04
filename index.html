@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Découvrir le Css</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<h1>Découvrir le css</h1>
+
+	<h2>Les sélecteurs</h2>
+
+	<div id="monid">
+		Div avec un id
+	</div>
+
+	<br/><br/>
+
+	<div class="maclasse">
+		Div avec une classe
+	</div>
+
+	<br/><br/>
+
+	<div class="maclasse" contenteditable>
+		Contenu éditable
+	</div>
+
+	<br/><br/>
+
+	<a title="Mon lien" href="#monid">
+		Lien avec un attribut title
+	</a>
+
+	<br/><br/>
+
+	<hr/>
+
+	<!-- Pour appliquer un style à plusieurs balise, je peux utiliser les ids mais c'est plus plus rébarbatif car je dois aussi ajouter le nouveau sélecteur dans le fichier css -->
+
+	<h1 id="titre1">Titre 1</h1>
+	<h2 id="titre2">Titre 2</h2>
+	<h3 id="titre3">Titre 3</h3>
+	<h4 id="titre4">Titre 4</h4>
+	<h5 id="titre5">Titre 5</h5>
+
+	<!-- A l'inverse une classe peut-être réutilisé dans le html pour appliquer du css sans avoir à réintervenir dans le fichier css -->
+
+	<h1 class="titre">Titre 1</h1>
+	<h2 class="titre">Titre 2</h2>
+	<h3 class="titre">Titre 3</h3>
+	<h4 class="titre">Titre 4</h4>
+	<h5 class="titre">Titre 5</h5>
+
+	<hr/>
+
+	<h2>Le chainage</h2>
+
+	<input id="prenom" class="monnom monprenom1" type="text" placeholder="Prénom1" value="Aurélien" />
+	<input id="prenom" class="monnom monprenom2" type="text" placeholder="Prénom2" value="Jérémy" />
+	<input id="nomdefamille" class="monnom" type="text" placeholder="Nom de famille" />
+	<input id="motdepasse" class="motdepasse" type="password" placeholder="Mot de passe" />
+
+	<hr/>
+
+	<h2>Les sélecteurs de descendance</h2>
+
+	<ul>
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+	</ul>
+
+	<ul>
+		<li class="item">Item 1</li>
+		<li class="item">Item 2</li>
+		<li class="item">Item 3</li>
+	</ul>
+
+	<ul id="list2">
+		<li>Item A</li>
+		<li>Item B</li>
+		<li>Item C</li>
+	</ul>
+
+	<p>Exemple de descendant sur plusieurs niveaux</p>
+
+	<div class="compsant">
+		<a href="">Un lien</a>
+		<ul class="liste">
+			<li>Item 1</li>
+			<li>
+				<p>
+					Du texte contient des <span class="mot">mots</span> et des paragraphes
+				</p>
+			</li>
+		</ul>
+	</div>
+
+	<hr>
+
+	<h2>Les pseudo-classes</h2>
+
+	<a href="">Lien</a>
+
+	<ul class="pseudo">
+		<li>Item 1</li>
+		<li>Item 2</li>
+	</ul>
+
+	<br/><br/>
+
+	<h2>Les fonctions de pseudo-classes</h2>
+	
+	<ul class="fonction1">
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+		<li>Item 4</li>
+		<li>Item 5</li>
+		<li>Item 6</li>
+	</ul>
+
+	<br/><br/>
+
+	<div class="fonction2">
+		<a>a > Item 1</a>
+		<p>p > Item 2</p>
+		<div>div > Item 3</div>
+		<a>a > Item 4</a>
+		<p>p > Item 5</p>
+		<p>p > Item 6</p>
+	</div>
+
+	<br/><br/>
+
+	<div class="fonction3">
+		<p>texte 1</p>
+		<p>texte 2</p>
+		<div class="monblock">Block</div>
+		<p>texte 3</p>
+		<p>texte 4</p>
+	</div>
+
+	<h2>Les pseudo-elements</h2>
+
+	<p class="element1">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisi dolor, tempus sit amet auctor sed, efficitur at dolor. Curabitur pharetra, elit eu consequat ornare, arcu nisl aliquet velit, in rutrum massa quam eget mi. Proin dignissim eros maximus leo aliquam, quis placerat turpis ultricies. Sed eget congue metus.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisi dolor, tempus sit amet auctor sed, efficitur at dolor. Curabitur pharetra, elit eu consequat ornare, arcu nisl aliquet velit, in rutrum massa quam eget mi. Proin dignissim eros maximus leo aliquam, quis placerat turpis ultricies. Sed eget congue metus.
+	</p>
+
+	
+	<h2>Le poids des sélecteurs</h2>
+	
+	<div class="poids">
+		<p>
+			<span id="monspanid" class="monspanclass" href="">Mon span</span>
+		</p>
+	</div>
+
+	<h2>Les propriétés</h2>
+
+	<h3>Styler du texte</h3>
+
+	<p class="texte">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nisi dolor, tempus sit amet auctor sed, efficitur at dolor. Curabitur pharetra, elit eu consequat ornare, arcu nisl aliquet velit, in rutrum massa quam eget mi.
+	</p>
+
+	<p class="texte2">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	</p>
+
+	<h3>Les types d'affichage</h3>
+	
+	<div class="affichage1">
+		Lorem ipsum dolor sit amet
+	</div>
+
+	<span class="affichage2">
+		Lorem ipsum dolor sit amet
+	</span>
+
+	<div class="affichage3">
+		Lorem ipsum dolor sit amet
+	</div>
+
+	<h3>Afficher masquer</h3>
+
+	<p>
+		<span>texte 1</span>
+		<span class="cacher1">texte 2</span>
+		<span>texte 3</span>
+	</p>
+
+	<p>
+		<span>texte 1</span>
+		<span class="cacher2">texte 2</span>
+		<span>texte 3</span>
+	</p>
+
+	<p>
+		<span>texte 1</span>
+		<span class="cacher3">texte 2</span>
+		<span>texte 3</span>
+	</p>
+
+	<h3>Modifier la taille</h3>
+
+	<div class="taille1">
+		Div
+	</div>
+
+	<span class="taille2">
+		Span 
+	</span>
+
+	<div class="taille3">
+		Div
+	</div>
+	
+	<h3>Appliquer des marges</h3>
+
+	<p>Marge externes</p>
+	
+	<ul class="marges">
+		<li></li>
+		<li class="carre1"></li>
+		<li></li>
+	</ul>
+
+	<ul class="marges">
+		<li class="carre2"></li>
+	</ul>
+
+	<p>Marge internes</p>
+	
+	<ul class="marges">
+		<li>Du texte</li>
+		<li class="carre3">blabla</li>
+		<li class="carre4">Bonjour</li>
+	</ul>
+
+	<h3>Position dans la page</h3>
+
+	<p>Position relative à l'endroit ou est le bloc dans le flux</p>
+	<ul class="positions">
+		<li></li>
+		<li></li>
+		<li class="carre5"></li>
+	</ul>
+
+	<p>Position absolute au coin supérieur gauche de l'écran (sorti du flux)</p>
+	<ul class="positions referentiel">
+		<li></li>
+		<li></li>
+		<li class="carre6"></li>
+	</ul>
+
+</body>
+</html>

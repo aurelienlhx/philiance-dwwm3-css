@@ -1,0 +1,395 @@
+/* Découvrir le css */
+
+/* Les sélecteurs */
+
+/* Je sélectionne toutes mes balises avec le sélecteur universel */
+* {
+	border:1px dotted black;
+} 
+
+/* Je sélectionne toutes les balises qui ont ces types */
+html,body,br{
+	border:0 none;
+}
+
+body{
+	padding-bottom:200px;
+}
+
+hr{
+	border:1px solid black;
+}
+
+/* Je sélectionne toutes les balises dont id="monid" */
+#monid {
+	color:red;
+}
+
+/* Je sélectionne toutes les balises dont class="maclasse" */
+.maclasse {
+	color:green;
+}
+
+
+/* Je sélectionne toutes les balises qui ont un attribut contenteditable*/
+[contenteditable]{
+	font-weight:bold;
+}
+
+/* Je sélectionne toutes les balises dont href="#monid"*/
+[href="#monid"]{
+	text-decoration:none;
+}
+
+/* Certaines méthodes de sélections sont à priviligier en fonction du contexte */
+
+/* Si j'ai plusieurs titre de la même couleur, il est plus facile d'utiliser une seule classe à répliquer que de recréer des id à chaque fois*/
+#titre1,
+#titre2,
+#titre3,
+#titre4,
+#titre5{
+	color:orange;
+}
+
+.titre{
+	color:orange;
+}
+
+/* Le chainage des sélecteurs */
+
+input{
+	border:1px solid black;
+}
+
+input[type="text"] {
+	padding:10px;
+} 
+
+input[type="text"] {
+	padding:10px;
+}
+
+input[type="text"].monnom{
+	border-color:red;
+}
+
+.monprenom2{
+	text-transform: capitalize;
+}
+
+.monnom.monprenom2{
+	text-transform: capitalize;
+}
+
+input[type="text"].monnom#nomdefamille{
+	text-transform:uppercase;
+}
+
+#nomdefamille{
+	text-transform:uppercase;
+}
+
+/* Les sélecteur de descendance */
+
+li{
+	color:black;
+}
+
+li.item{
+	color:green;
+}
+
+body li.item{
+
+}
+
+/* premier notion de descendance : J'applique une couleur sur le parent, les enfants en hérite 
+ici je dis au ul qui a la l'id #list2 qu'il doit être violet et que ces enfants en hériteront donc
+*/
+#list2{
+	color:purple;
+}
+
+/* sauf que je viens de dire plus haut que finlament tous les li n'hérite pas mais on bien leur propre couleur noire */
+/* je viens donc cherché les li dans la liste qui l'id #list2 
+<ul id="list2">
+	<li>
+</ul>
+
+*/
+#list2 li{
+	color:red;
+}
+
+/* Il n'y a pas de sélecteur d'asscendance 
+ Ici je ne remonte pas à liste 2, je dit va checher toutes les balise dont id="list2" qui sont dans des li
+<ul>
+	<li>
+		<ul id="list2">
+			<li>
+
+			</li>
+		</ul>
+	</li>
+</ul>
+
+*/
+li #list2 {}
+
+
+.compsant .liste li  p .mot{
+	color:red;
+}
+
+
+/* Les pseudo-classes */
+
+/*li:hover{
+	font-weight:bold;
+};*/
+
+/* Sélectionne les balises lien que je survoles */
+/*a:hover{
+	border:1px solid red;
+};*/
+
+/*a:visited{
+	color:pink;
+}*/
+
+.pseudo li:first-child{
+	color:green;
+}
+
+div:empty{
+
+}
+
+/* Les fonctions de pseudo-classes */
+
+.fonction1 li:nth-child(2){
+	color:blue;
+}
+
+/* Je récupère les li paires */
+.fonction1 li:nth-child(2n){
+	color:red;
+}
+
+/* Je récupère les li paires */
+.fonction1 li:nth-child(2n+1){
+	color:green;
+}
+
+.fonction2 a:nth-of-type(2n+1){
+	color:green;
+}
+
+.fonction3 *:not(.monblock){
+	color:brown;
+}
+
+
+/* Les pseudos-élements */
+
+.element1::first-letter{
+	color:green;
+	font-size:20px;
+	font-weight:bold;
+}
+
+.element1::first-line{
+	color:blue;
+}
+
+.element1::selection{
+	background-color:teal;
+}
+
+.element1::before{
+	content:'before';
+	display:block;
+	border:1px solid green;
+}
+
+.element1::after{
+	content:url('https://www.aurelienlheureux.com/assets/images/me.png');
+	border:1px solid red;
+	display:block;
+}
+
+/* Le poid de sélecteur */
+
+#monspanid{
+	color:orange;
+}
+
+.monspanclass{
+	color:red;
+}
+
+span{
+	color:green;
+}
+
+span#monspanid{
+	color:grey;
+}
+
+/* Les prefixes vendeurs */
+
+/*div{
+	-webkit-box-shadow:0 0 5px rgba(0,0,0,0.5);
+	-moz-box-shadow:0 0 5px rgba(0,0,0,0.5);
+	box-shadow:0 0 5px rgba(0,0,0,0.5);
+}
+
+div{
+	box-shadow:0 0 5px rgba(0,0,0,0.5);
+}*/
+
+/* Les propriétés */
+
+/* styler du texte */
+
+.texte{
+	color:#ff0000;
+	font-family:Tahoma,Arial,Georgia,sans-serif;
+	font-size:24px;
+	font-weight:bold;
+	font-style:italic;
+	text-align:justify;
+}
+
+.texte2{
+	color:#ff0000;
+	font:italic bold 24px Tahoma,Arial,Georgia,sans-serif;
+}
+
+/* gérer les types d'affichage */
+
+div.affichage1{
+	display:inline;
+}
+span.affichage2{
+	display:block;
+}
+div.affichage3{
+	display:inline-block;
+}
+
+
+/* Afficher/masquer */
+
+.cacher1{
+	display:none;
+}
+
+.cacher2{
+	visibility:hidden;
+}
+
+.cacher3{
+	opacity:0;
+}
+
+/* Modifier la taille */
+
+div.taille1 {
+	width:349px;
+	height:124px;
+}
+
+span.taille2 {
+	display:block;
+	width:20%;
+	height:100px;
+	min-width:200px;
+}
+
+div.taille3 {
+	width:90%;
+	max-width:700px;
+}
+
+/* Appliquer des marges */
+
+ul.marges{
+	padding-left:0;
+}
+
+ul.marges li{
+	display:inline-block;
+	vertical-align:middle;
+	width:50px;
+	height:50px;
+}
+
+/* marge externes */
+
+.carre1{
+	border:1px solid orange;
+	margin-left:70px;
+	margin-top:10px;
+	margin-right:100px;
+	margin-bottom:10px;
+	/* égale à */
+	margin:10px 300px 10px 70px;
+}
+
+.carre2{
+	display:block!important;
+	border:1px solid orange;
+	margin-left:auto;
+	margin-right:auto;
+	margin:auto;
+}
+
+/* marge internes */
+
+.carre3{
+	border:10px solid orange;
+	padding:20px 40px 10px 5px;
+	box-sizing:content-box;
+}
+
+.carre4{
+	border:5px solid green;
+	padding-left:20px;
+	box-sizing:border-box;
+}
+
+/* Gérer les positions */
+
+ul.positions{
+	padding-left:0;
+}
+
+ul.positions li{
+	display:inline-block;
+	vertical-align:middle;
+	width:50px;
+	height:50px;
+}
+
+.carre5{
+	position:relative;
+	border:1px solid blue;
+	left:100px;
+	right:0;
+	bottom:20px;
+}
+
+.referentiel{
+	position:relative; /* ou absolute */
+}
+
+.carre6{
+	position:absolute;
+	border:1px solid red;
+	bottom:-100px;
+	left:90%;
+}
+
+
